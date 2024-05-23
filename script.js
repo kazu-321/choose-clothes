@@ -2,16 +2,41 @@ document.getElementById('randomButton').addEventListener('click', () => {
     const topsDir = './clothes/tops/';
     const pantsDir = './clothes/pants/';
     
-    const dh = window.showDirectoryPicker();
+    // const dh = window.showDirectoryPicker();
  
-    // 開いたディレクトリ内のファイルとディレクトリをコンソールに出力
-    for(const handle of root.values()) {
-        if (handle.kind === 'file') {
-           console.log(handle.name);
-        } else if (handle.kind === 'directory') {
-            console.log(handle.name + '/');
-        }
-    }
+    // // 開いたディレクトリ内のファイルとディレクトリをコンソールに出力
+    // for(const handle of root.values()) {
+    //     if (handle.kind === 'file') {
+    //        console.log(handle.name);
+    //     } else if (handle.kind === 'directory') {
+    //         console.log(handle.name + '/');
+    //     }
+    // }
+    window.webkitRequestFileSystem(
+        TEMPORARY,  // 一時的（テンポラリ）
+        0,    // 確保するサイズ
+        function(fs){ // 成功時のコールバック関数
+            fs.root.getDirectory(dirname, {},
+                function(dirEntry){
+                    var dirReader = dirEntry.createReader();
+                    dirReader.readEntries(
+                        function(list){
+                            // ファイル／ディレクトリの数だけ繰り返し
+                            for(var i=0; i<list.length; i++){
+                                if (list[i].isFile){  // ファイルの場合
+                                    list[i].name
+                                }
+                            }
+                        },
+                        function(err){}
+                    );
+                },
+                function(err){}
+            );
+        },
+        function(err){}
+    )
+
     tops = [
         "tops1.jpeg",
         "tops2.jpeg",
