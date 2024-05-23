@@ -5,7 +5,7 @@ document.getElementById('randomButton').addEventListener('click', () => {
         TEMPORARY,  // 一時的（テンポラリ）
         0,    // 確保するサイズ
         function(fs){ // 成功時のコールバック関数
-            fs.root.getDirectory(dirname, {},
+            fs.root.getDirectory(topsDir, {},
                 function(dirEntry){
                     var dirReader = dirEntry.createReader();
                     dirReader.readEntries(
