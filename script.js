@@ -2,9 +2,13 @@ document.getElementById('randomButton').addEventListener('click', () => {
     const topsDir = './clothes/tops/';
     const pantsDir = './clothes/pants/';
     
-    tops = [];
+    tops = [
+        "top1.jpeg"
+    ];
     
-    pants = [];
+    pants = [
+        "pant1.jpeg"
+    ];
     // window.webkitRequestFileSystem(
     //     TEMPORARY,  // 一時的（テンポラリ）
     //     0,    // 確保するサイズ

@@ -19,7 +19,7 @@ button {
 }
 
 .clothes-display {
-    display: flex;
+    /* display: flex; */
     justify-content: center;
 }
 
