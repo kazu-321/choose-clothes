@@ -3,11 +3,15 @@ document.getElementById('randomButton').addEventListener('click', () => {
     const pantsDir = './clothes/pants/';
     
     tops = [
-        "tops1.jpeg"
+        "tops1.jpeg",
+        "tops2.jpeg",
+        "tops3.jpeg",
     ];
     
     pants = [
-        "pants1.jpeg"
+        "pants1.jpeg",
+        "pants2.jpeg",
+        "pants3.jpeg",
     ];
     // window.webkitRequestFileSystem(
     //     TEMPORARY,  // 一時的（テンポラリ）
