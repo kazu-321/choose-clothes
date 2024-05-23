@@ -5,7 +5,7 @@ document.getElementById('randomButton').addEventListener('click', () => {
     const dh = window.showDirectoryPicker();
  
     // 開いたディレクトリ内のファイルとディレクトリをコンソールに出力
-    for await (const handle of root.values()) {
+    for(const handle of root.values()) {
         if (handle.kind === 'file') {
            console.log(handle.name);
         } else if (handle.kind === 'directory') {
