@@ -1,17 +1,6 @@
 document.getElementById('randomButton').addEventListener('click', () => {
     const topsDir = './clothes/tops/';
     const pantsDir = './clothes/pants/';
-    
-    // const dh = window.showDirectoryPicker();
- 
-    // // 開いたディレクトリ内のファイルとディレクトリをコンソールに出力
-    // for(const handle of root.values()) {
-    //     if (handle.kind === 'file') {
-    //        console.log(handle.name);
-    //     } else if (handle.kind === 'directory') {
-    //         console.log(handle.name + '/');
-    //     }
-    // }
     window.webkitRequestFileSystem(
         TEMPORARY,  // 一時的（テンポラリ）
         0,    // 確保するサイズ
@@ -24,7 +13,7 @@ document.getElementById('randomButton').addEventListener('click', () => {
                             // ファイル／ディレクトリの数だけ繰り返し
                             for(var i=0; i<list.length; i++){
                                 if (list[i].isFile){  // ファイルの場合
-                                    list[i].name
+                                    console.log(list[i].name);
                                 }
                             }
                         },
